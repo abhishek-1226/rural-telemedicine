@@ -49,7 +49,7 @@ pipeline {
             }
         }
     }
-}
+
     post {
         success {
             echo 'Pipeline passed! Application deployed successfully.'
