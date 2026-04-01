@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Restoring dependencies...'
                 dir('backend') {
-                    sh 'dotnet restore'
+                    bat 'dotnet restore'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 dir('backend') {
-                    sh 'dotnet build --no-restore'
+                    bat 'dotnet build --no-restore'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 dir('tests') {
-                    sh 'dotnet test --no-build --verbosity normal'
+                    bat 'dotnet test --no-build --verbosity normal'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 dir('backend') {
-                    sh 'dotnet run &'
+                    bat 'dotnet run'
                 }
             }
         }
