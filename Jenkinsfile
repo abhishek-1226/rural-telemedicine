@@ -44,12 +44,12 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 dir('backend') {
-                    bat 'dotnet run'
+                    bat 'start /B dotnet run'
                 }
             }
         }
     }
-
+}
     post {
         success {
             echo 'Pipeline passed! Application deployed successfully.'
